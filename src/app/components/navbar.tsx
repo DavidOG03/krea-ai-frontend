@@ -3,9 +3,9 @@
 import React from "react";
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
-    <header className="flex items-center w-full justify-between fixed top-2 right-0 left-0 z-81">
+    <header className="flex items-center w-full justify-between fixed top-2 right-0 left-0 z-81 px-4">
       <Link href="/">
         <svg
           aria-label="Krea Logo"

@@ -72,7 +72,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
 
       setTimeout(() => {
         setIsAnimating(false);
-      }, 300);
+      }, 700);
     },
     [currentIndex, isAnimating]
   );
@@ -134,21 +134,21 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
 
   return (
     <div
-      className={`relative w-full max-w-7xl mx-auto ${className}`}
+      className={`relative w-full mx-auto ${className}`}
       ref={carouselRef}
       onMouseEnter={stopAutoPlay}
       onMouseLeave={startAutoPlay}
     >
       {/* Main carousel container */}
       <div
-        className="relative overflow-hidden rounded-2xl h-[400px] md:h-[500px]"
+        className="relative overflow-hidden h-[400px] md:h-[500px] w-full"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
         {/* Carousel slides */}
         <div
-          className="flex transition-transform duration-500 ease-out h-full "
+          className="flex transition-transform duration-500 ease-out h-full"
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
             willChange: "transform",
@@ -157,7 +157,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
           {items.map((item, index) => (
             <div
               key={item.id}
-              className={`min-w-4xl h-full relative overflow-hidden mr-[3rem] rounded-2xl ${item.gradient}`}
+              className={`w-full h-full flex-shrink-0 relative overflow-hidden rounded-2xl snap-center ${item.gradient}`}
               style={{
                 backgroundImage: `linear-gradient(135deg, ${item.gradient})`,
               }}
@@ -166,6 +166,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
               <div className="absolute inset-0">
                 {item.video ? (
                   <video
+                    autoPlay={true}
                     preload="metadata"
                     className="object-cover w-full h-full transition-scale aspect-[1.618/1] rounded-sm object-center duration-300 ease-out sm:group-hover/button:scale-[1.02] sm:group-active/button:scale-100"
                   >
@@ -187,10 +188,10 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
 
               {/* Content */}
               <div className="relative z-10 w-full h-full flex items-center justify-between">
-                <div className="w-full max-w-6xl mx-auto px-6 md:px-12">
+                <div className="w-full mt-auto mb-6 md:mb-12 px-6 md:px-12">
                   <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     {/* Text Content */}
-                    <div className="space-y font-inter ">
+                    <div className="space-y font-inter">
                       {item.badge && (
                         <div className="inline-flex items-center absolute top-4 left-4">
                           <span className="px-3 py-1 text-sm font-medium text-white/75 font-inter">
@@ -198,15 +199,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
                           </span>
                         </div>
                       )}
-
-                      <div>
-                        {/* <h1
-                          className={`text-4xl md:text-6xl lg:text-7xl font-inter font-bold mb-4 ${
-                            item.textColor || "text-white"
-                          }`}
-                        >
-                          {item.title}
-                        </h1> */}
+                      <div className="">
                         <h2 className="text-xl md:text-2xl font-semibold font-inter-tight text-white/90 mb-4">
                           {item.subtitle}
                         </h2>
@@ -215,21 +208,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
                         </p>
                       </div>
                     </div>
-
-                    {/* Feature Image/Illustration */}
-                    {/* <div className="hidden lg:block relative">
-                      <div className="relative w-full h-80">
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          fill
-                          className="object-contain drop-shadow-2xl"
-                          priority={index === 0}
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                      </div>
-                    </div> */}
-                    <button className="group inline-flex items-center bg-primary-foreground dark:bg-primary-foreground text-black px-8 py-3 rounded-xl font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-xl max-w-[200px]">
+                    <button className="group inline-flex ml-auto items-center bg-primary-foreground dark:bg-primary-foreground text-foreground dark:text-foreground px-8 py-4 rounded-4xl font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-xl max-w-[200px] cursor-pointer">
                       {item.buttonText}
                     </button>
                   </div>
@@ -238,34 +217,34 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
             </div>
           ))}
         </div>
-
-        {/* Navigation Arrows */}
-        {showArrows && items.length > 1 && (
-          <div className="absolute right-4 -bottom-full">
-            <button
-              onClick={goToPrevious}
-              disabled={isAnimating}
-              className=" bg-primary-foreground dark:bg-primary-foreground backdrop-blur-sm border border-white/20 rounded-full p-3 text-primary hover:bg-white/20 transition-all duration-300 disabled:opacity-50 hover:scale-110"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <button
-              onClick={goToNext}
-              disabled={isAnimating}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full p-3 text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 hover:scale-110"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
-        )}
       </div>
+
+      {/* Navigation Arrows */}
+      {showArrows && items.length > 1 && (
+        <div className="absolute right-4 -bottom-[2rem] flex gap-2">
+          <button
+            onClick={goToPrevious}
+            disabled={isAnimating}
+            className="bg-gray/25 dark:bg-gray/85 border border-white/20 rounded-full p-3 text-foreground dark:text-foreground  hover:bg-white/20 transition-all duration-300 disabled:opacity-50 cursor-pointer"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <button
+            onClick={goToNext}
+            disabled={isAnimating}
+            className="bg-gray/25 dark:bg-gray/25 border border-white/20 rounded-full p-3 text-foreground dark:text-foreground hover:bg-white/ dark:hover:bg-background transition-all duration-300 disabled:opacity-50 cursor-pointer"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+      )}
 
       {/* Dot indicators */}
       {showDots && items.length > 1 && (
-        <div className="flex justify-center mt-6 space-x-2">
+        <div className="flex justify-center mt-6 space-x-4">
           {items.map((_, index) => (
             <button
               key={index}
@@ -273,7 +252,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
               disabled={isAnimating}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? "bg-blue-500 scale-125"
+                  ? "bg-primary"
                   : "bg-gray-300 hover:bg-gray-400"
               }`}
               aria-label={`Go to slide ${index + 1}`}
@@ -281,16 +260,6 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
           ))}
         </div>
       )}
-
-      {/* Progress indicator (optional) */}
-      <div className="absolute bottom-6 left-6 right-6 z-20">
-        <div className="w-full bg-white/20 rounded-full h-1">
-          <div
-            className="bg-white h-1 rounded-full transition-all duration-500 ease-out"
-            style={{ width: `${((currentIndex + 1) / items.length) * 100}%` }}
-          />
-        </div>
-      </div>
     </div>
   );
 };

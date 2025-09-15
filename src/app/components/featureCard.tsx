@@ -1,35 +1,42 @@
-import Image from "next/image";
-import React from "react";
+// import Image from "next/image";
+import React, { ReactNode } from "react";
 
 interface CardProps {
-  featureIcon: string;
-  feature: string;
+  icon: ReactNode;
+  title: string;
   text: string;
+  isNew?: boolean;
+  tailwindStyle?: string;
+  customStyle?: object;
 }
-const FeatureCard: React.FC<CardProps> = ({ feature, featureIcon, text }) => {
+const FeatureCard: React.FC<CardProps> = ({
+  title,
+  icon,
+  text,
+  isNew,
+  tailwindStyle,
+  customStyle,
+}) => {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex justify-between items-center">
-      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-        {/* <svg
-                    className="w-6 h-6 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg> */}
-        <Image src={featureIcon} alt={feature} width={24} height={24} />
+    <div className="flex justify-between items-center gap-3">
+      <div className={tailwindStyle} style={customStyle}>
+        {icon}
       </div>
       <div className="mr-auto">
-        <h3 className="text-lg font-semibold mb-2">{feature}</h3>
-        <p className="text-gray-600 text-sm">{text}</p>
+        <h3 className="font-regular pt-0.5 pb-1 text-sm leading-5 text-foreground dark:text-foreground flex justify-start gap-2">
+          {title}{" "}
+          {isNew && (
+            <span className="inline-block bg-[#116aff] text-sm font-semibold rounded-[8px] py-0.15 px-1.25 text-white">
+              New
+            </span>
+          )}
+        </h3>
+        <p className="text-gray-600 text-[13.5px] leading-3.5">{text}</p>
       </div>
-      <button type="button" className="bg-transparent border-0">
+      <button
+        type="button"
+        className="bg-gray/25 px-4 py-1 rounded-xl border-0 text-[13px]"
+      >
         Open
       </button>
     </div>

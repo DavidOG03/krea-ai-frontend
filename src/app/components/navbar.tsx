@@ -1,33 +1,67 @@
+"use client";
 // import Image from "next/image";
 // import kreaLogo from "../../../public/images/krea-logo-black.png";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import ThemeToggle from "./themeToggle";
 
 const Navbar: React.FC = () => {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   return (
     <header className="flex items-center w-full justify-between fixed top-2 right-0 left-0 z-81 px-4">
-      <Link href="/">
-        <svg
-          aria-label="Krea Logo"
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-          className="krea-logo"
-        >
-          <path
-            d="M8.34 1.266c1.766-.124 3.324 1.105 3.551 2.802.216 1.612-.887 3.171-2.545 3.536-.415.092-.877.066-1.317.122a4.63 4.63 0 0 0-2.748 1.34l-.008.004-.01-.001-.006-.005-.003-.009q0-.009.005-.016a.04.04 0 0 0 .007-.022 438 438 0 0 1-.01-4.541c.003-1.68 1.33-3.086 3.085-3.21"
+      <Link href="/" className="mr-10">
+        {theme === "dark" ? (
+          //
+          <svg
+            aria-label="Krea Logo"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="#fff"
+            xmlns="http://www.w3.org/2000/svg"
+            className=""
+          >
+            <path
+              d="M8.34 1.266c1.766-.124 3.324 1.105 3.551 2.802.216 1.612-.887 3.171-2.545 3.536-.415.092-.877.066-1.317.122a4.63 4.63 0 0 0-2.748 1.34l-.008.004-.01-.001-.006-.005-.003-.009q0-.009.005-.016a.04.04 0 0 0 .007-.022 438 438 0 0 1-.01-4.541c.003-1.68 1.33-3.086 3.085-3.21"
+              className=""
+            ></path>
+            <path
+              d="M8.526 15.305c-2.247-.018-3.858-2.23-3.076-4.3a3.31 3.31 0 0 1 2.757-2.11c.384-.04.845-.03 1.215-.098 1.9-.353 3.368-1.806 3.665-3.657.066-.41.031-.9.128-1.335.449-2.016 2.759-3.147 4.699-2.236 1.011.476 1.69 1.374 1.857 2.447q.051.33.034.818c-.22 5.842-5.21 10.519-11.279 10.47m2.831.93a.04.04 0 0 1-.021-.02l-.001-.006.002-.006q0-.003.003-.004l.006-.003q3.458-.792 5.992-3.185.045-.042.083.007c.27.357.554.74.78 1.106a10.6 10.6 0 0 1 1.585 4.89q.037.53.023.819c-.084 1.705-1.51 3.08-3.31 3.09-1.592.01-2.992-1.077-3.294-2.597-.072-.36-.05-.858-.11-1.238q-.282-1.755-1.715-2.84zm-3.369 6.64c-1.353-.235-2.441-1.286-2.684-2.593a5 5 0 0 1-.05-.817V15.14q0-.021.016-.007c.884.786 1.814 1.266 3.028 1.346l.326.01c1.581.051 2.92 1.087 3.229 2.592.457 2.225-1.557 4.195-3.865 3.793"
+              className=""
+            ></path>
+          </svg>
+        ) : (
+          <svg
+            aria-label="Krea Logo"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
             className="krea-logo"
-          ></path>
-          <path
-            d="M8.526 15.305c-2.247-.018-3.858-2.23-3.076-4.3a3.31 3.31 0 0 1 2.757-2.11c.384-.04.845-.03 1.215-.098 1.9-.353 3.368-1.806 3.665-3.657.066-.41.031-.9.128-1.335.449-2.016 2.759-3.147 4.699-2.236 1.011.476 1.69 1.374 1.857 2.447q.051.33.034.818c-.22 5.842-5.21 10.519-11.279 10.47m2.831.93a.04.04 0 0 1-.021-.02l-.001-.006.002-.006q0-.003.003-.004l.006-.003q3.458-.792 5.992-3.185.045-.042.083.007c.27.357.554.74.78 1.106a10.6 10.6 0 0 1 1.585 4.89q.037.53.023.819c-.084 1.705-1.51 3.08-3.31 3.09-1.592.01-2.992-1.077-3.294-2.597-.072-.36-.05-.858-.11-1.238q-.282-1.755-1.715-2.84zm-3.369 6.64c-1.353-.235-2.441-1.286-2.684-2.593a5 5 0 0 1-.05-.817V15.14q0-.021.016-.007c.884.786 1.814 1.266 3.028 1.346l.326.01c1.581.051 2.92 1.087 3.229 2.592.457 2.225-1.557 4.195-3.865 3.793"
-            className="krea-logo"
-          ></path>
-        </svg>
+          >
+            <path
+              d="M8.34 1.266c1.766-.124 3.324 1.105 3.551 2.802.216 1.612-.887 3.171-2.545 3.536-.415.092-.877.066-1.317.122a4.63 4.63 0 0 0-2.748 1.34l-.008.004-.01-.001-.006-.005-.003-.009q0-.009.005-.016a.04.04 0 0 0 .007-.022 438 438 0 0 1-.01-4.541c.003-1.68 1.33-3.086 3.085-3.21"
+              className="krea-logo"
+            ></path>
+            <path
+              d="M8.526 15.305c-2.247-.018-3.858-2.23-3.076-4.3a3.31 3.31 0 0 1 2.757-2.11c.384-.04.845-.03 1.215-.098 1.9-.353 3.368-1.806 3.665-3.657.066-.41.031-.9.128-1.335.449-2.016 2.759-3.147 4.699-2.236 1.011.476 1.69 1.374 1.857 2.447q.051.33.034.818c-.22 5.842-5.21 10.519-11.279 10.47m2.831.93a.04.04 0 0 1-.021-.02l-.001-.006.002-.006q0-.003.003-.004l.006-.003q3.458-.792 5.992-3.185.045-.042.083.007c.27.357.554.74.78 1.106a10.6 10.6 0 0 1 1.585 4.89q.037.53.023.819c-.084 1.705-1.51 3.08-3.31 3.09-1.592.01-2.992-1.077-3.294-2.597-.072-.36-.05-.858-.11-1.238q-.282-1.755-1.715-2.84zm-3.369 6.64c-1.353-.235-2.441-1.286-2.684-2.593a5 5 0 0 1-.05-.817V15.14q0-.021.016-.007c.884.786 1.814 1.266 3.028 1.346l.326.01c1.581.051 2.92 1.087 3.229 2.592.457 2.225-1.557 4.195-3.865 3.793"
+              className="krea-logo"
+            ></path>
+          </svg>
+        )}
       </Link>
+      <div className="mr-auto flex justify-start gap-3 items-center">
+        <Image src="/images/profile.svg" alt="profile" width={30} height={30} />
+        <span className="text-gray dark:text-gray">benevolentnimblebat</span>
+        <div className="text-gray dark:text-gray">
+          <ChevronDown />
+        </div>
+      </div>
       <nav
-        className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary/10 dark:bg-primary/85 flex w-fit origin-center transform justify-center rounded-2xl backdrop-blur-2xl transition-[transform,opacity,scale,translate,background-color] select-none
+        className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary/5 dark:bg-primary flex w-fit origin-center transform justify-center rounded-2xl backdrop-blur-2xl transition-[transform,opacity,scale,translate,background-color] select-none
     duration-[500ms] ease-[cubic-bezier(0,1,.35,1)]"
       >
         <ul className="m-0 flex list-none p-0">
@@ -36,8 +70,9 @@ const Navbar: React.FC = () => {
               href="/"
               aria-label="go to homepage"
               aria-current="page"
-              className="group relative my-1.5 ml-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black"
+              className="group relative my-1.5 ml-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black dark:text-black "
             >
+              <div className="dark:bg-white bg-white absolute inset-0 z-10 rounded-xl shadow-[0_1px_4px_0px_rgba(0,0,0,0.075)] dark:shadow-none"></div>
               <svg
                 width="18"
                 height="18"
@@ -57,7 +92,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Image"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black dark:text-white "
+              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground "
             >
               <svg
                 width="18"
@@ -97,7 +132,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Video"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black dark:text-white "
+              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground"
             >
               <svg
                 width="18"
@@ -134,7 +169,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Enhancer"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black dark:text-white "
+              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground  "
             >
               <svg
                 width="18"
@@ -193,7 +228,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open realtime"
-              className="group relative my-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black dark:text-white "
+              className="group relative my-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground  "
             >
               <svg
                 width="18"
@@ -225,7 +260,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Edit"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black dark:text-white "
+              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground  "
             >
               <svg
                 width="18"
@@ -271,7 +306,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Assets"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black dark:text-white mr-1.5"
+              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground  mr-1.5"
             >
               <svg
                 width="18"
@@ -297,8 +332,8 @@ const Navbar: React.FC = () => {
         </ul>
       </nav>
       <menu className="text-primary-400 dark:text-primary-500 mt-1 flex w-fit items-center justify-center gap-2 pr-5 text-xs font-medium select-none">
-        <li>
-          <button className="hover:bg-primary/20 dark:bg-primary/80 bg-primary/10 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg text-black/70 backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] hover:text-black dark:text-white/80 dark:hover:text-white">
+        <li className="cursor-pointer">
+          <button className="hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18px"
@@ -319,8 +354,8 @@ const Navbar: React.FC = () => {
             Gallery
           </button>
         </li>
-        <li>
-          <button className="hover:bg-primary/20 dark:bg-primary/80 bg-primary/10 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg text-black/70 backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] hover:text-black dark:text-white/80 dark:hover:text-white">
+        <li className="cursor-pointer">
+          <button className="hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18px"
@@ -339,8 +374,8 @@ const Navbar: React.FC = () => {
             Support
           </button>
         </li>
-        <li>
-          <button className="gap-2 hover:bg-primary/20 dark:bg-primary/80 bg-primary/10 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 items-center justify-center rounded-lg text-black/70 backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] hover:text-black dark:text-white/80 dark:hover:text-white">
+        <li className="cursor-pointer">
+          <button className="gap-2 hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 items-center justify-center rounded-l backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground /80 dark:hover:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18px"
@@ -354,33 +389,19 @@ const Navbar: React.FC = () => {
             </svg>
           </button>
         </li>
-        <li>
-          <button
-            aria-label="theme"
-            className="hover:bg-primary/20 dark:bg-primary/80 bg-primary/10 dark:hover:bg-primary/70 flex h-[30px] w-[30px] items-center justify-center rounded-lg text-black/70 backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] hover:text-black dark:text-white/80 dark:hover:text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-            >
-              <title>sun_fill</title>
-              <g id="sun_fill" fill="none">
-                <path d="M24 0v24H0V0zM12.593 23.258l-.011.002-.071.035-.02.004-.014-.004-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01-.017.428.005.02.01.013.104.074.015.004.012-.004.104-.074.012-.016.004-.017-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113-.013.002-.185.093-.01.01-.003.011.018.43.005.012.008.007.201.093c.012.004.023 0 .029-.008l.004-.014-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014-.034.614c0 .012.007.02.017.024l.015-.002.201-.093.01-.008.004-.011.017-.43-.003-.012-.01-.01z"></path>
-                <path
-                  fill="currentColor"
-                  d="M12 19a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1m6.364-2.05.707.707a1 1 0 0 1-1.414 1.414l-.707-.707a1 1 0 0 1 1.414-1.414m-12.728 0a1 1 0 0 1 1.497 1.32l-.083.094-.707.707a1 1 0 0 1-1.497-1.32l.083-.094zM12 6a6 6 0 1 1 0 12 6 6 0 0 1 0-12m-8 5a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11zm17 0a1 1 0 1 1 0 2h-1a1 1 0 1 1 0-2zM4.929 4.929a1 1 0 0 1 1.32-.083l.094.083.707.707a1 1 0 0 1-1.32 1.497l-.094-.083-.707-.707a1 1 0 0 1 0-1.414m14.142 0a1 1 0 0 1 0 1.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0M12 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1"
-                ></path>
-              </g>
-            </svg>
-          </button>
-        </li>
-        <li>
-          <span
+        <ThemeToggle theme={theme} setTheme={setTheme} />
+        <li className="w-[30px] h-[30px] cursor-pointer">
+          {/* <span
             aria-label="theme"
             className="rounded-full inline-block h-[30px] w-[30px] bg-radial-[at_50%_50%] from-[#ff5cb4] via-[#ff5cb4] to-sky-200"
-          ></span>
+          ></span> 
+          */}
+          <Image
+            src="/images/profile.svg"
+            alt="profile"
+            width={29}
+            height={29}
+          />
         </li>
       </menu>
     </header>

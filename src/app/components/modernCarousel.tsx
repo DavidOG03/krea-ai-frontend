@@ -208,7 +208,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
                         </p>
                       </div>
                     </div>
-                    <button className="group inline-flex ml-auto items-center bg-primary-foreground dark:bg-primary-foreground text-foreground dark:text-foreground px-8 py-4 rounded-4xl font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-xl max-w-[200px] cursor-pointer">
+                    <button className="group inline-flex ml-auto items-center bg-primary-foreground dark:bg-primary-foreground text-foreground dark:text-foreground px-8 py-4 rounded-4xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl max-w-[200px] cursor-pointer">
                       {item.buttonText}
                     </button>
                   </div>
@@ -225,7 +225,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
           <button
             onClick={goToPrevious}
             disabled={isAnimating}
-            className="bg-gray/25 dark:bg-gray/85 border border-white/20 rounded-full p-3 text-foreground dark:text-foreground  hover:bg-white/20 transition-all duration-300 disabled:opacity-50 cursor-pointer"
+            className="bg-gray/25 dark:bg-gray/85 border border-white/20 rounded-full p-3 text-foreground dark:text-foreground hover:bg-white/20 transition-all duration-300 disabled:opacity-50 cursor-pointer"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -252,8 +252,8 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
               disabled={isAnimating}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? "bg-primary"
-                  : "bg-gray-300 hover:bg-gray-400"
+                  ? "bg-dot dark:bg-dot"
+                  : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

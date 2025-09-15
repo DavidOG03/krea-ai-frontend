@@ -35,7 +35,7 @@ const FeatureCard: React.FC<CardProps> = ({
       </div>
       <button
         type="button"
-        className="bg-gray/25 px-4 py-1 rounded-xl border-0 text-[13px]"
+        className="bg-gray/25 px-4 py-1 rounded-xl border-0 text-[13px] text-foreground  dark:text-foreground"
       >
         Open
       </button>

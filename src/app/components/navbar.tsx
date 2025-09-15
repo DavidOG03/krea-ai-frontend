@@ -355,7 +355,7 @@ const Navbar: React.FC = () => {
           </button>
         </li>
         <li className="cursor-pointer">
-          <button className="hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground ">
+          <button className="hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18px"
@@ -375,7 +375,7 @@ const Navbar: React.FC = () => {
           </button>
         </li>
         <li className="cursor-pointer">
-          <button className="gap-2 hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 items-center justify-center rounded-l backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground /80 dark:hover:text-white">
+          <button className="gap-2 hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground /80 dark:hover:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18px"

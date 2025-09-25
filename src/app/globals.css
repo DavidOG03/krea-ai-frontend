@@ -52,7 +52,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --radius-radius: var(--radius);
-  --font-inter: var(--inter);
+  --font-inter: "Inter", sans-serif;
   --color-dot: var(--dot);
 }
 
@@ -94,5 +94,5 @@
 body {
   background: var(--background);
   /* color: var(--foreground); */
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
 }

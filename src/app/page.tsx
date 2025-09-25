@@ -2,6 +2,7 @@ import Navbar from "@/app/components/navbar";
 import ModernCarousel from "@/app/components/modernCarousel";
 import { ChevronDown } from "lucide-react";
 import FeatureCard from "./components/featureCard";
+import HorizontalCarousel from "./components/horizontalCarousel";
 
 export default function Home() {
   const carouselItems = [
@@ -471,14 +472,15 @@ export default function Home() {
       <div className="w-full h-auto mt-[7rem]">
         <section className="w-full py-8 ">
           <div className="container mx-auto w-full">
-            <ModernCarousel
+            {/* <ModernCarousel
               items={carouselItems}
               autoPlay={false}
               autoPlayInterval={0}
               showDots={true}
               showArrows={true}
               className="mb-12"
-            />
+            /> */}
+            <HorizontalCarousel />
           </div>
         </section>
         <section className="py-6">

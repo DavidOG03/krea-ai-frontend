@@ -234,7 +234,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
           <button
             onClick={goToNext}
             disabled={isAnimating}
-            className="bg-gray/25 dark:bg-gray/25 border border-white/20 rounded-full p-2 text-foreground hover:bg-white/ dark:hover:bg-background transition-all duration-300 disabled:opacity-50 cursor-pointer"
+            className="bg-gray/25 dark:bg-gray/85 border border-white/20 rounded-full p-2 text-foreground hover:bg-white/20 transition-all duration-300 disabled:opacity-50 cursor-pointer"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />
@@ -252,8 +252,8 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
               disabled={isAnimating}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? "bg-dot dark:bg-dot"
-                  : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400"
+                  ? "bg-dot "
+                  : "bg-gray-300 hover:bg-gray-400"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

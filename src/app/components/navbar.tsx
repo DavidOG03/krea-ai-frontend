@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
               href="/"
               aria-label="go to homepage"
               aria-current="page"
-              className="group relative my-1.5 ml-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black dark:text-black "
+              className="group relative my-1.5 ml-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black dark:text-black hover:bg-accent-foreground/5 rounded-xl "
             >
               <div className=" bg-white absolute inset-0 z-10 rounded-xl shadow-[0_1px_4px_0px_rgba(0,0,0,0.075)] dark:shadow-none"></div>
               <svg
@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Image"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground "
+              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground hover:bg-accent-foreground/5 rounded-xl "
             >
               <svg
                 width="18"
@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Video"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground"
+              className="group relative my-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground hover:bg-accent-foreground/5 rounded-xl"
             >
               <svg
                 width="18"
@@ -169,7 +169,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Enhancer"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground  "
+              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground hover:bg-accent-foreground/5 rounded-xl  "
             >
               <svg
                 width="18"
@@ -228,7 +228,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open realtime"
-              className="group relative my-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground  "
+              className="group relative my-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground hover:bg-accent-foreground/5 rounded-xl"
             >
               <svg
                 width="18"
@@ -260,7 +260,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Edit"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground "
+              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground hover:bg-accent-foreground/5 rounded-xl"
             >
               <svg
                 width="18"
@@ -306,7 +306,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Assets"
-              className="group relative my-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground  mr-1.5"
+              className="group relative my-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground mr-1.5 hover:bg-accent-foreground/5 rounded-xl"
             >
               <svg
                 width="18"
@@ -333,7 +333,7 @@ const Navbar: React.FC = () => {
       </nav>
       <menu className="text-primary dark:text-primary mt-1 flex w-fit items-center justify-center gap-2 pr-5 text-xs font-medium select-none">
         <li className="cursor-pointer">
-          <button className="hover:bg-accent-foreground/20 bg-accent flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground">
+          <button className="hover:bg-accent-foreground/20 bg-accent flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18px"

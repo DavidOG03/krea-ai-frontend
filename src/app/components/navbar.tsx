@@ -55,13 +55,13 @@ const Navbar: React.FC = () => {
       </Link>
       <div className="mr-auto flex justify-start gap-3 items-center">
         <Image src="/images/profile.svg" alt="profile" width={30} height={30} />
-        <span className="text-gray dark:text-gray">benevolentnimblebat</span>
+        <span className="text-gray dark:text-gray ">benevolentnimblebat</span>
         <div className="text-gray dark:text-gray">
           <ChevronDown />
         </div>
       </div>
       <nav
-        className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary/5 dark:bg-primary flex w-fit origin-center transform justify-center rounded-2xl backdrop-blur-2xl transition-[transform,opacity,scale,translate,background-color] select-none
+        className="absolute top-0 left-1/2 -translate-x-1/2 bg-accent flex w-fit origin-center transform justify-center rounded-2xl backdrop-blur-2xl transition-[transform,opacity,scale,translate,background-color] select-none
     duration-[500ms] ease-[cubic-bezier(0,1,.35,1)]"
       >
         <ul className="m-0 flex list-none p-0">
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
               aria-current="page"
               className="group relative my-1.5 ml-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-black dark:text-black "
             >
-              <div className="dark:bg-white bg-white absolute inset-0 z-10 rounded-xl shadow-[0_1px_4px_0px_rgba(0,0,0,0.075)] dark:shadow-none"></div>
+              <div className=" bg-white absolute inset-0 z-10 rounded-xl shadow-[0_1px_4px_0px_rgba(0,0,0,0.075)] dark:shadow-none"></div>
               <svg
                 width="18"
                 height="18"
@@ -228,7 +228,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open realtime"
-              className="group relative my-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground  "
+              className="group relative my-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground  "
             >
               <svg
                 width="18"
@@ -260,7 +260,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Edit"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground  "
+              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground "
             >
               <svg
                 width="18"
@@ -306,7 +306,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               aria-label="Open Assets"
-              className="group relative my-1.5  block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground dark:text-foreground  mr-1.5"
+              className="group relative my-1.5 block h-10 w-13 leading-none transition-colors duration-100 ease-out text-foreground  mr-1.5"
             >
               <svg
                 width="18"
@@ -331,9 +331,9 @@ const Navbar: React.FC = () => {
           </li>
         </ul>
       </nav>
-      <menu className="text-primary-400 dark:text-primary-500 mt-1 flex w-fit items-center justify-center gap-2 pr-5 text-xs font-medium select-none">
+      <menu className="text-primary dark:text-primary mt-1 flex w-fit items-center justify-center gap-2 pr-5 text-xs font-medium select-none">
         <li className="cursor-pointer">
-          <button className="hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground">
+          <button className="hover:bg-accent-foreground/20 bg-accent flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18px"
@@ -355,7 +355,7 @@ const Navbar: React.FC = () => {
           </button>
         </li>
         <li className="cursor-pointer">
-          <button className="hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground ">
+          <button className="hover:bg-accent-foreground/20 bg-accent flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18px"
@@ -375,7 +375,7 @@ const Navbar: React.FC = () => {
           </button>
         </li>
         <li className="cursor-pointer">
-          <button className="gap-2 hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-auto w-auto p-1.5 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground /80 dark:hover:text-white">
+          <button className="gap-2 hover:bg-accent-foreground/20 bg-accent flex h-auto w-auto p-1.5 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground dark:text-foreground /80 dark:hover:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18px"

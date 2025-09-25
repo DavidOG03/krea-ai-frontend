@@ -18,7 +18,7 @@ const FeatureCard: React.FC<CardProps> = ({
   customStyle,
 }) => {
   return (
-    <div className="flex justify-between items-center gap-3">
+    <div className="flex justify-between items-start gap-3">
       <div className={tailwindStyle} style={customStyle}>
         {icon}
       </div>

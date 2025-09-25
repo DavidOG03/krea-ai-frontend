@@ -39,7 +39,7 @@ export default function ThemeToggle({ theme, setTheme }: ThemeProps) {
       <button
         onClick={toggleTheme}
         aria-label="theme"
-        className="hover:bg-primary/20 dark:bg-primary/80 bg-primary/5 dark:hover:bg-primary/70 flex h-[30px] w-[30px] items-center justify-center rounded-lg text-foreground dark:text-foreground/70 backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] hover:text-foreground dark:hover:text-foreground/65 "
+        className="hover:bg-accent-foreground/20 bg-accent flex h-[30px] w-[30px] items-center justify-center rounded-lg text-foreground dark:text-foreground/70 backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] hover:text-foreground dark:hover:text-foreground/65 "
       >
         {theme === "dark" ? (
           //

@@ -10,8 +10,8 @@ export default function Home() {
       title: "WAN 2.2",
       subtitle: "WAN 2.2 Image generation",
       description:
-        "Generate complex images with the brand new and powerful WAN 2.2 model. Exceptional banner generation and fine...",
-      image: "/images/wan-2-2.webp", // Replace with your actual image paths
+        "Generate complex images with the brand new and powerful WAN 2.2 model. Exceptional prompt adherence and ultra-realistic textures.",
+      image: "/images/wan-2-2.webp",
       badge: "NEW IMAGE MODEL",
       buttonText: "Try WAN 2.2",
       gradient: "from-blue-900 via-purple-900 to-indigo-900",
@@ -23,7 +23,7 @@ export default function Home() {
       title: "Open Source model",
       subtitle: "FLUX.1 Krea",
       description:
-        "With meta-level voyagers to our FLUX Krea model batch. Slices. Download and run our model tailored. Visit the technical report of...",
+        "We're making the weights to our FLUX.1 Krea model open source. Download and run our model weights, read the technical report or generate with it in Krea Image.",
       image: "/images/flux-video.mp4",
       badge: "OPEN SOURCE MODEL",
       buttonText: "Try FLUX.1",
@@ -49,7 +49,7 @@ export default function Home() {
       title: "WAN 2.2",
       subtitle: "WAN 2.2 Image generation",
       description:
-        "Generate complex images with the brand new and powerful WAN 2.2 model. Exceptional banner generation and fine...",
+        "Generate complex images with the brand new and powerful WAN 2.2 model. Exceptional prompt adherence and ultra-realistic textures.",
       image: "/images/wan-2-2.webp", // Replace with your actual image paths
       badge: "NEW IMAGE MODEL",
       buttonText: "Try WAN 2.2",
@@ -62,7 +62,7 @@ export default function Home() {
       title: "Open Source model",
       subtitle: "FLUX.1 Krea",
       description:
-        "With meta-level voyagers to our FLUX Krea model batch. Slices. Download and run our model tailored. Visit the technical report of...",
+        "We're making the weights to our FLUX.1 Krea model open source. Download and run our model weights, read the technical report or generate with it in Krea Image.",
       image: "/images/flux-video.mp4",
       badge: "OPEN SOURCE MODEL",
       buttonText: "Try FLUX.1",

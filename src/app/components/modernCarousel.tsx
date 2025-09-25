@@ -189,7 +189,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
               {/* Content */}
               <div className="relative z-10 w-full h-full flex items-center justify-between">
                 <div className="w-full mt-auto mb-6 md:mb-12 px-6 md:px-12">
-                  <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
                     {/* Text Content */}
                     <div className="space-y font-inter">
                       {item.badge && (
@@ -208,7 +208,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
                         </p>
                       </div>
                     </div>
-                    <button className="group inline-flex ml-auto items-center bg-primary-foreground dark:bg-primary-foreground text-foreground dark:text-foreground px-8 py-4 rounded-4xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl max-w-[200px] cursor-pointer">
+                    <button className="group inline-flex ml-auto items-center bg-primary-foreground dark:bg-primary-foreground text-foreground px-8 py-4 rounded-4xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl max-w-[200px] cursor-pointer">
                       {item.buttonText}
                     </button>
                   </div>
@@ -221,11 +221,11 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
 
       {/* Navigation Arrows */}
       {showArrows && items.length > 1 && (
-        <div className="absolute right-4 -bottom-[2rem] flex gap-2">
+        <div className="absolute right-4 -bottom-[1rem] flex gap-2">
           <button
             onClick={goToPrevious}
             disabled={isAnimating}
-            className="bg-gray/25 dark:bg-gray/85 border border-white/20 rounded-full p-3 text-foreground dark:text-foreground hover:bg-white/20 transition-all duration-300 disabled:opacity-50 cursor-pointer"
+            className="bg-gray/25 dark:bg-gray/85 border border-white/20 rounded-full p-2 text-foreground hover:bg-white/20 transition-all duration-300 disabled:opacity-50 cursor-pointer"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -234,7 +234,7 @@ const ModernCarousel: React.FC<ModernCarouselProps> = ({
           <button
             onClick={goToNext}
             disabled={isAnimating}
-            className="bg-gray/25 dark:bg-gray/25 border border-white/20 rounded-full p-3 text-foreground dark:text-foreground hover:bg-white/ dark:hover:bg-background transition-all duration-300 disabled:opacity-50 cursor-pointer"
+            className="bg-gray/25 dark:bg-gray/25 border border-white/20 rounded-full p-2 text-foreground hover:bg-white/ dark:hover:bg-background transition-all duration-300 disabled:opacity-50 cursor-pointer"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />

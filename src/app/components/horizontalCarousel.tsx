@@ -87,16 +87,15 @@ export default function Carousel() {
       <Swiper
         modules={[Navigation, Pagination, A11y, Keyboard]}
         spaceBetween={24}
-        slidesPerView={1.2}
+        slidesPerView={1.3}
         pagination={{
           el: ".custom-pagination",
           clickable: true,
           renderBullet: (index, className) => {
-            // Swiper will add `swiper-pagination-bullet-active` to the active one
             return `
       <span class="${className} w-3 h-3 mx-1 rounded-full
         bg-gray-500 
-        [&.swiper-pagination-bullet-active]:bg-dot
+        [&.swiper-pagination-bullet-active]:bg-black
         transition-colors duration-300
       " aria-label="Go to slide ${index + 1}"></span>
     `;
@@ -141,7 +140,7 @@ export default function Carousel() {
                   <div className="w-full mt-auto mb-6 md:mb-12 px-6 md:px-12">
                     <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
                       {/* Text Content */}
-                      <div className="space-y font-inter">
+                      <div className=" font-inter">
                         {item.badge && (
                           <div className="inline-flex items-center absolute top-4 left-4">
                             <span className="px-3 py-1 text-sm font-medium text-white/75 font-inter">
@@ -150,15 +149,15 @@ export default function Carousel() {
                           </div>
                         )}
                         <div>
-                          <h2 className="text-xl md:text-2xl font-semibold font-inter-tight text-white/90 mb-4">
+                          <h2 className="text-xl md:text-3xl font-semibold font-inter-tight text-white mb-4">
                             {item.subtitle}
                           </h2>
-                          <p className="text-lg text-white/80 leading-relaxed max-w-xl">
+                          <p className="text-base text-white/80 leading-relaxed max-w-3xl">
                             {item.description}
                           </p>
                         </div>
                       </div>
-                      <button className="group inline-flex ml-auto items-center bg-primary-foreground dark:bg-primary-foreground text-foreground px-8 py-4 rounded-4xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl max-w-[200px] cursor-pointer">
+                      <button className="group inline-flex ml-auto items-center bg-primary-foreground text-foreground px-8 py-4 rounded-4xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl max-w-[200px] cursor-pointer">
                         {item.buttonText}
                       </button>
                     </div>

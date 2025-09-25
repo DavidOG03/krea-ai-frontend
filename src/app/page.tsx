@@ -1,91 +1,10 @@
 import Navbar from "@/app/components/navbar";
-import ModernCarousel from "@/app/components/modernCarousel";
+
 import { ChevronDown } from "lucide-react";
 import FeatureCard from "./components/featureCard";
 import HorizontalCarousel from "./components/horizontalCarousel";
 
 export default function Home() {
-  const carouselItems = [
-    {
-      id: "1",
-      title: "WAN 2.2",
-      subtitle: "WAN 2.2 Image generation",
-      description:
-        "Generate complex images with the brand new and powerful WAN 2.2 model. Exceptional prompt adherence and ultra-realistic textures.",
-      image: "/images/wan-2-2.webp",
-      badge: "NEW IMAGE MODEL",
-      buttonText: "Try WAN 2.2",
-      gradient: "from-blue-900 via-purple-900 to-indigo-900",
-      textColor: "text-white",
-      video: false,
-    },
-    {
-      id: "2",
-      title: "Open Source model",
-      subtitle: "FLUX.1 Krea",
-      description:
-        "We're making the weights to our FLUX.1 Krea model open source. Download and run our model weights, read the technical report or generate with it in Krea Image.",
-      image: "/images/flux-video.mp4",
-      badge: "OPEN SOURCE MODEL",
-      buttonText: "Try FLUX.1",
-      gradient: "from-amber-800 via-orange-700 to-yellow-600",
-      textColor: "text-white",
-      video: true,
-    },
-    {
-      id: "3",
-      title: "AI Studio",
-      subtitle: "Creative AI Platform",
-      description:
-        "Unleash your creativity with our comprehensive AI studio. Generate, edit, and enhance your content with cutting-edge AI models.",
-      image: "/images/ai-image.webp",
-      badge: "NEW RELEASE",
-      buttonText: "Explore Studio",
-      gradient: "from-emerald-900 via-teal-800 to-cyan-700",
-      textColor: "text-white",
-      video: false,
-    },
-    {
-      id: "4",
-      title: "WAN 2.2",
-      subtitle: "WAN 2.2 Image generation",
-      description:
-        "Generate complex images with the brand new and powerful WAN 2.2 model. Exceptional prompt adherence and ultra-realistic textures.",
-      image: "/images/wan-2-2.webp", // Replace with your actual image paths
-      badge: "NEW IMAGE MODEL",
-      buttonText: "Try WAN 2.2",
-      gradient: "from-blue-900 via-purple-900 to-indigo-900",
-      textColor: "text-white",
-      video: false,
-    },
-    {
-      id: "5",
-      title: "Open Source model",
-      subtitle: "FLUX.1 Krea",
-      description:
-        "We're making the weights to our FLUX.1 Krea model open source. Download and run our model weights, read the technical report or generate with it in Krea Image.",
-      image: "/images/flux-video.mp4",
-      badge: "OPEN SOURCE MODEL",
-      buttonText: "Try FLUX.1",
-      gradient: "from-amber-800 via-orange-700 to-yellow-600",
-      textColor: "text-white",
-      video: true,
-    },
-    {
-      id: "6",
-      title: "AI Studio",
-      subtitle: "Creative AI Platform",
-      description:
-        "Unleash your creativity with our comprehensive AI studio. Generate, edit, and enhance your content with cutting-edge AI models.",
-      image: "/images/ai-image.webp",
-      badge: "NEW RELEASE",
-      buttonText: "Explore Studio",
-      gradient: "from-emerald-900 via-teal-800 to-cyan-700",
-      textColor: "text-white",
-      video: false,
-    },
-  ];
-
   const items = [
     {
       id: 1,
@@ -130,8 +49,8 @@ export default function Home() {
         "relative aspect-square rounded-[10px] inset-ring-[0.5px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),inset_0_1px_5px_rgba(255,255,255,0.1)] inset-ring-black/10 size-10.5 shrink-0",
       css: {
         background: "linear-gradient(0deg, #D0E3F1 0%, #294962 100%)",
-        width: "42px",
-        height: "42px",
+        width: "50px",
+        height: "50px",
       },
     },
     {
@@ -209,8 +128,8 @@ export default function Home() {
       css: {
         background:
           "linear-gradient(0deg, rgb(206, 246, 255) 0%, oklch(0.7972 0.1583 221.31) 35%, oklch(0.6575 0.1796 237.869) 100%)",
-        width: "42px",
-        height: "42px",
+        width: "50px",
+        height: "50px",
       },
     },
     {
@@ -275,8 +194,8 @@ export default function Home() {
         "relative aspect-square rounded-[10px] inset-ring-[0.5px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),inset_0_1px_5px_rgba(255,255,255,0.1)] inset-ring-black/10 size-10.5 shrink-0",
       css: {
         background: " linear-gradient(0deg, #888888 0%, #000000 100%)",
-        width: "42px",
-        height: "42px",
+        width: "50px",
+        height: "50px",
       },
     },
     {
@@ -329,8 +248,8 @@ export default function Home() {
       css: {
         background:
           "linear-gradient(0deg, #AE91CA 0%, #592A85 60%, #180728 100%)",
-        width: "42px",
-        height: "42px",
+        width: "50px",
+        height: "50px",
       },
     },
     {
@@ -366,8 +285,8 @@ export default function Home() {
       css: {
         background:
           "linear-gradient(0deg, #BBCA91 0%, #3C878F 60%, #07280F 100%)",
-        width: "42px",
-        height: "42px",
+        width: "50px",
+        height: "50px",
       },
     },
     {
@@ -397,8 +316,8 @@ export default function Home() {
       style:
         "relative flex aspect-square items-center justify-center rounded-[10px] inset-ring-[0.5px] inset-ring-white/10 size-10.5 shrink-0 bg-[#1B1C1D]",
       css: {
-        width: "42px",
-        height: "42px",
+        width: "50px",
+        height: "50px",
       },
     },
     {

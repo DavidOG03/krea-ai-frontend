@@ -23,19 +23,19 @@ const FeatureCard: React.FC<CardProps> = ({
         {icon}
       </div>
       <div className="mr-auto">
-        <h3 className="font-regular pt-0.5 pb-1 text-sm leading-5 text-foreground dark:text-foreground flex justify-start gap-2">
+        <h3 className="font-regular pt-0.5 pb-1 text-xs leading-4 -mt-2 text-foreground dark:text-foreground flex justify-start gap-2">
           {title}{" "}
           {isNew && (
-            <span className="inline-block bg-[#116aff] text-sm font-semibold rounded-[8px] py-0.15 px-1.25 text-white">
+            <span className="inline-block bg-[#116aff] text-[10px] font-semibold rounded-[8px] py-0.15 px-1.25 text-white">
               New
             </span>
           )}
         </h3>
-        <p className="text-gray-600 text-[13.5px] leading-3.5">{text}</p>
+        <p className="text-gray-600 text-xs leading-3.5">{text}</p>
       </div>
       <button
         type="button"
-        className="bg-gray/25 px-4 py-1 rounded-xl border-0 text-[13px] text-foreground  dark:text-foreground"
+        className="bg-gray/25 px-4 py-1 rounded-xl border-0 text-xs text-foreground  dark:text-foreground"
       >
         Open
       </button>

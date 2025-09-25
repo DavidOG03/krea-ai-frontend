@@ -20,7 +20,7 @@ export default function ThemeToggle({ theme, setTheme }: ThemeProps) {
       document.documentElement.classList.remove("dark");
       setTheme("light");
     }
-  }, []);
+  }, [setTheme]);
 
   const toggleTheme = () => {
     if (theme === "dark") {

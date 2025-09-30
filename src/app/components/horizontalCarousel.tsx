@@ -101,7 +101,7 @@ export default function Carousel() {
       <Swiper
         modules={[Navigation, Pagination, A11y, Keyboard]}
         spaceBetween={24}
-        slidesPerView={1.3}
+        slidesPerView={1.5}
         pagination={{
           el: ".custom-pagination",
           clickable: true,

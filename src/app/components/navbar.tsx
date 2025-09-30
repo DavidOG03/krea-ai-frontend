@@ -9,6 +9,10 @@ import ThemeToggle from "./themeToggle";
 
 const Navbar: React.FC = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [profileOpen, setProfileOpen] = useState(false);
+  const handleProfileClick = () => {
+    setProfileOpen(!profileOpen);
+  };
   return (
     <header className="flex items-center w-full justify-between fixed top-2 right-0 left-0 z-81 px-4">
       <Link href="/" className="mr-10">
@@ -53,13 +57,53 @@ const Navbar: React.FC = () => {
           </svg>
         )}
       </Link>
-      <div className="mr-auto flex justify-start gap-3 items-center">
+      <button
+        type="button"
+        onClick={handleProfileClick}
+        className="mr-auto flex justify-start gap-2 items-center relative"
+      >
         <Image src="/images/profile.svg" alt="profile" width={30} height={30} />
-        <span className="text-gray dark:text-gray ">benevolentnimblebat</span>
-        <div className="text-gray dark:text-gray">
-          <ChevronDown />
+        <span className="text-gray text-sm hover:underline">
+          benevolentnimblebat
+        </span>
+        <div className="text-gray">
+          <ChevronDown
+            style={{
+              transform: profileOpen ? "rotate(180deg)" : "rotate(0deg)",
+              transition: "transform 0.2s ease-in-out",
+            }}
+          />
         </div>
-      </div>
+        {profileOpen && (
+          <ul className="absolute top-full left-1/2 mt-2 w-48 rounded-xl bg-white shadow-lg">
+            <li>
+              <Link
+                href="/"
+                className="block px-4 py-2 text-sm text-gray hover:bg-gray/10"
+              >
+                Profile
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="block px-4 py-2 text-sm text-gray hover:bg-gray/10"
+              >
+                Settings
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="block px-4 py-2 text-sm text-gray hover:bg-gray/10"
+              >
+                Logout
+              </Link>
+            </li>
+          </ul>
+        )}
+      </button>
+
       <nav
         className="absolute top-0 left-1/2 -translate-x-1/2 bg-accent flex w-fit origin-center transform justify-center rounded-2xl backdrop-blur-2xl transition-[transform,opacity,scale,translate,background-color] select-none
     duration-[500ms] ease-[cubic-bezier(0,1,.35,1)]"

@@ -75,11 +75,25 @@ const slides = [
 ];
 
 export default function Carousel() {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
+  const swiperRef = useRef<import("swiper").Swiper | null>(null);
 
   useEffect(() => {
-    // Ensures swiper buttons render after mount
+    // When refs and swiper instance are ready, attach navigation elements and initialize/update
+    const swiper = swiperRef.current;
+    if (!swiper) return;
+    if (prevRef.current && nextRef.current) {
+      // @ts-expect-error - swiper types are from swiper package
+      swiper.params.navigation.prevEl = prevRef.current;
+      // @ts-expect-error
+      swiper.params.navigation.nextEl = nextRef.current;
+      // initialize navigation
+      if (swiper.navigation) {
+        swiper.navigation.init();
+        swiper.navigation.update();
+      }
+    }
   }, []);
 
   return (
@@ -101,20 +115,15 @@ export default function Carousel() {
     `;
           },
         }}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
+        navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
         keyboard={{ enabled: true }}
         a11y={{
           prevSlideMessage: "Previous slide",
           nextSlideMessage: "Next slide",
         }}
-        onBeforeInit={(swiper) => {
-          // @ts-expect-error
-          swiper.params.navigation.prevEl = prevRef.current;
-          // @ts-expect-error
-          swiper.params.navigation.nextEl = nextRef.current;
+        // capture the swiper instance so we can initialize navigation once refs mount
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
         }}
         className="!overflow-visible"
       >
@@ -123,7 +132,7 @@ export default function Carousel() {
             key={item.id}
             className="flex justify-center items-center"
           >
-            <div className="relative w-full h-[350px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative w-full h-[350px] md:h-[350px] rounded-2xl overflow-hidden shadow-lg">
               {/* Background Image */}
               <Image
                 src={item.src}
@@ -178,14 +187,14 @@ export default function Carousel() {
           <button
             ref={prevRef}
             aria-label="Previous slide"
-            className="bg-gray/25 dark:bg-gray/85 border border-white/20 rounded-full p-2 text-foreground hover:bg-white/20 transition-all duration-300 disabled:opacity-50 cursor-pointer"
+            className="bg-gray/25 border border-white/20 rounded-full p-2 text-foreground hover:bg-white/20 transition-all duration-300 disabled:opacity-50 cursor-pointer"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             ref={nextRef}
             aria-label="Next slide"
-            className="bg-gray/25 dark:bg-gray/25 border border-white/20 rounded-full p-2 text-foreground hover:bg-white/ dark:hover:bg-background transition-all duration-300 disabled:opacity-50 cursor-pointer"
+            className="bg-gray/25 border border-white/20 rounded-full p-2 text-foreground hover:bg-white/20 transition-all duration-300 disabled:opacity-50 cursor-pointer"
           >
             <ChevronRight className="w-6 h-6" />
           </button>

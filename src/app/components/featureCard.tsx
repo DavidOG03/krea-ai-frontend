@@ -18,7 +18,7 @@ const FeatureCard: React.FC<CardProps> = ({
   customStyle,
 }) => {
   return (
-    <div className="flex justify-between items-center gap-3 hover:bg-gray/10 transition-all duration-200 p-1 ease-in-out rounded-2xl cursor-pointer">
+    <div className="flex justify-between items-center gap-3 hover:bg-gray/10 transition-all duration-200 py-3 px-1 ease-in-out cursor-pointer">
       <div className={tailwindStyle} style={customStyle}>
         {icon}
       </div>
@@ -35,7 +35,7 @@ const FeatureCard: React.FC<CardProps> = ({
       </div>
       <button
         type="button"
-        className="bg-gray/25 px-4 py-1 rounded-xl border-0 text-xs text-foreground  dark:text-foreground"
+        className="bg-gray/25 px-4 py-1 rounded-xl border-0 text-xs text-foreground  dark:text-foreground cursor-pointer hover:bg-gray/30 transition-all duration-200"
       >
         Open
       </button>

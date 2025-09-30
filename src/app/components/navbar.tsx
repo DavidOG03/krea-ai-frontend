@@ -60,7 +60,8 @@ const Navbar: React.FC = () => {
       <button
         type="button"
         onClick={handleProfileClick}
-        className="mr-auto flex justify-start gap-2 items-center relative"
+        className="mr-auto flex justify-start gap-2 items-center relative cursor-pointer"
+        aria-label="User profile menu"
       >
         <Image src="/images/profile.svg" alt="profile" width={30} height={30} />
         <span className="text-gray text-sm hover:underline">
@@ -75,7 +76,7 @@ const Navbar: React.FC = () => {
           />
         </div>
         {profileOpen && (
-          <ul className="absolute top-full left-1/2 mt-2 w-48 rounded-xl bg-white shadow-lg">
+          <ul className="absolute top-full left-1/2 mt-2 w-48 rounded-xl bg-background shadow-lg -translate-x-1/2 border border-gray/10 dark:border-gray/20 overflow-hidden z-50">
             <li>
               <Link
                 href="/"

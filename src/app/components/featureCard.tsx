@@ -18,12 +18,12 @@ const FeatureCard: React.FC<CardProps> = ({
   customStyle,
 }) => {
   return (
-    <div className="flex justify-between items-start gap-3">
+    <div className="flex justify-between items-center gap-3 hover:bg-gray/10 transition-all duration-200 p-1 ease-in-out rounded-2xl cursor-pointer">
       <div className={tailwindStyle} style={customStyle}>
         {icon}
       </div>
       <div className="mr-auto">
-        <h3 className="font-regular pt-0.5 pb-1 text-xs leading-4 -mt-2 text-foreground dark:text-foreground flex justify-start gap-2">
+        <h3 className="font-semibold pt-0.5 pb-1 text-xs leading-4 -mt-2 text-foreground dark:text-foreground flex justify-start gap-2">
           {title}{" "}
           {isNew && (
             <span className="inline-block bg-[#116aff] text-[10px] font-semibold rounded-[8px] py-0.15 px-1.25 text-white">
@@ -31,7 +31,7 @@ const FeatureCard: React.FC<CardProps> = ({
             </span>
           )}
         </h3>
-        <p className="text-gray-600 text-xs leading-3.5">{text}</p>
+        <p className="text-gray text-[12px] leading-3.5">{text}</p>
       </div>
       <button
         type="button"

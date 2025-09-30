@@ -8,7 +8,6 @@ interface ThemeProps {
 }
 export default function ThemeToggle({ theme, setTheme }: ThemeProps) {
   useEffect(() => {
-    // Check saved preference or system preference on mount
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
@@ -39,10 +38,9 @@ export default function ThemeToggle({ theme, setTheme }: ThemeProps) {
       <button
         onClick={toggleTheme}
         aria-label="theme"
-        className="hover:bg-accent-foreground/20 bg-accent flex h-[30px] w-[30px] items-center justify-center rounded-lg text-foreground dark:text-foreground/70 backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] hover:text-foreground dark:hover:text-foreground/65 "
+        className="hover:bg-accent-foreground/20 bg-accent flex h-[30px] w-[30px] items-center justify-center rounded-lg text-foreground dark:text-foreground/70 backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] hover:text-foreground cursor-pointer dark:hover:text-foreground/65 "
       >
         {theme === "dark" ? (
-          //
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"

@@ -405,7 +405,9 @@ export default function Home() {
         <section className="py-6">
           <div className="container mx-auto px-4">
             <div className="header flex justify-between items-center mb-5">
-              <h1 className="text-2xl text-foreground">Generate</h1>
+              <h1 className="text-xl text-foreground font-semibold">
+                Generate
+              </h1>
               <span className="text-blue-600 font-inter flex">
                 show more <ChevronDown color="#155dfc" />
               </span>

@@ -108,8 +108,8 @@ export default function Carousel() {
           renderBullet: (index, className) => {
             return `
       <span class="${className} w-3 h-3 mx-1 rounded-full
-        bg-gray-500 
-        [&.swiper-pagination-bullet-active]:bg-black
+        bg-gray 
+        [&.swiper-pagination-active]:bg-accent
         transition-colors duration-300
       " aria-label="Go to slide ${index + 1}"></span>
     `;

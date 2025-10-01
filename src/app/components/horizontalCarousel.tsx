@@ -144,7 +144,7 @@ export default function Carousel() {
               />
 
               {/* Overlay Content */}
-              <div className="absolute inset-0 bg-black/50">
+              <div className="absolute inset-0 bg-black/30">
                 <div className="relative z-10 w-full h-full flex items-center justify-between">
                   <div className="w-full mt-auto mb-6 md:mb-12 px-6 md:px-12">
                     <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-8 items-end">

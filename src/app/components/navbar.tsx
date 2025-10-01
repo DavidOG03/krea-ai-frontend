@@ -14,8 +14,8 @@ const Navbar: React.FC = () => {
     setProfileOpen(!profileOpen);
   };
   return (
-    <header className="flex items-center w-full justify-between fixed top-2 right-0 left-0 z-81 px-4">
-      <Link href="/" className="mr-10">
+    <header className="flex items-center w-full justify-between fixed top-2 right-0 left-0 z-81 px-2 lg:px-4">
+      <Link href="/" className="mr-5 lg:mr-10">
         {theme === "dark" ? (
           //
           <svg
@@ -60,10 +60,10 @@ const Navbar: React.FC = () => {
       <button
         type="button"
         onClick={handleProfileClick}
-        className="mr-auto flex justify-start gap-2 items-center relative cursor-pointer"
+        className="mr-auto flex justify-start gap-1 items-center relative cursor-pointer"
         aria-label="User profile menu"
       >
-        <Image src="/images/profile.svg" alt="profile" width={30} height={30} />
+        <Image src="/images/profile.svg" alt="profile" width={30} height={30} className="hidden lg:block"/>
         <span className="text-gray text-sm hover:underline">
           benevolentnimblebat
         </span>
@@ -106,10 +106,10 @@ const Navbar: React.FC = () => {
       </button>
 
       <nav
-        className="absolute top-0 left-1/2 -translate-x-1/2 bg-accent flex w-fit origin-center transform justify-center rounded-2xl backdrop-blur-2xl transition-[transform,opacity,scale,translate,background-color] select-none
+        className="absolute top-11 lg:top-0 left-1/2 -translate-x-1/2 bg-accent flex w-fit origin-center transform justify-center rounded-2xl backdrop-blur-2xl transition-[transform,opacity,scale,translate,background-color] select-none
     duration-[500ms] ease-[cubic-bezier(0,1,.35,1)]"
       >
-        <ul className="m-0 flex list-none p-0">
+        <ul className="m-0 flex justify-center items-center list-none p-0 md:0">
           <li>
             <Link
               href="/"
@@ -376,7 +376,7 @@ const Navbar: React.FC = () => {
           </li>
         </ul>
       </nav>
-      <menu className="text-primary dark:text-primary mt-1 flex w-fit items-center justify-center gap-2 pr-5 text-xs font-medium select-none">
+      <menu className="text-primary dark:text-primary mt-1 flex w-fit items-center justify-center gap-1 lg:gap-2 pr-2 lg:pr-5 text-xs font-medium select-none">
         <li className="cursor-pointer">
           <button className="hover:bg-accent-foreground/20 bg-accent flex h-auto w-auto p-1.5 gap-2 items-center justify-center rounded-lg backdrop-blur-lg transition-colors duration-150 ease-[cubic-bezier(.33,0,.2,1)] cursor-pointer text-foreground ">
             <svg
@@ -396,7 +396,9 @@ const Navbar: React.FC = () => {
                 d="M21.904 16.441c.083-1.024.094-2.274.096-3.743a.697.697 0 1 0-1.396 0c-.001 1.477-.012 2.658-.091 3.63c-.084 1.032-.242 1.763-.507 2.32l-2.633-2.37a2.79 2.79 0 0 0-3.471-.21l-.277.196a1.86 1.86 0 0 1-2.386-.207l-3.99-3.99a2.14 2.14 0 0 0-2.922-.097l-.931.814V12c0-2.212 0-3.801.163-5.01c.16-1.19.464-1.907.994-2.437S5.8 3.72 6.99 3.56c1.079-.145 2.458-.161 4.313-.163a.699.699 0 0 0 0-1.396c-1.829.002-3.33.02-4.499.177c-1.343.18-2.404.557-3.236 1.39s-1.21 1.893-1.39 3.236C2 8.116 2 9.8 2 11.947V12q0 .736.002 1.396c.007 1.729.044 3.121.243 4.24c.203 1.14.584 2.058 1.322 2.796c.832.833 1.893 1.21 3.236 1.39C8.116 22 9.8 22 11.947 22h.106c2.148 0 3.83 0 5.144-.177c1.344-.18 2.404-.557 3.236-1.39a4.2 4.2 0 0 0 .73-.983c.445-.825.644-1.82.74-3.009"
               ></path>
             </svg>
-            Gallery
+            <span className="hidden lg:inline-block"> Gallery</span>
+
+           
           </button>
         </li>
         <li className="cursor-pointer">
@@ -416,7 +418,8 @@ const Navbar: React.FC = () => {
                 ></path>
               </g>
             </svg>
-            Support
+            <span className="hidden lg:inline-block"> Support</span>
+           
           </button>
         </li>
         <li className="cursor-pointer">

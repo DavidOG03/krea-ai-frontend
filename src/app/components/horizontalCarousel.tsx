@@ -109,7 +109,7 @@ export default function Carousel() {
             return `
       <span class="${className} w-3 h-3 mx-1 rounded-full
         bg-gray 
-        [&.swiper-pagination-active]:bg-accent
+        [&.swiper-pagination-active]:bg-[oklch(0.205 0 0)]
         transition-colors duration-300
       " aria-label="Go to slide ${index + 1}"></span>
     `;
@@ -138,35 +138,35 @@ export default function Carousel() {
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 priority={item.id === 1}
               />
 
               {/* Overlay Content */}
-              <div className="absolute inset-0 bg-black/40">
+              <div className="absolute inset-0 bg-black/50">
                 <div className="relative z-10 w-full h-full flex items-center justify-between">
                   <div className="w-full mt-auto mb-6 md:mb-12 px-6 md:px-12">
-                    <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
+                    <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-8 items-end">
                       {/* Text Content */}
                       <div className=" font-inter">
                         {item.badge && (
-                          <div className="inline-flex items-center absolute top-4 left-4">
-                            <span className="px-3 py-1 text-sm font-medium text-white/75 font-inter">
+                          <div className="inline-flex items-center absolute top-2 left-2 lg:top-4 lg:left-4">
+                            <span className="px-3 py-1 text-xs lg:text-sm font-medium text-white/75 font-inter">
                               {item.badge}
                             </span>
                           </div>
                         )}
                         <div>
-                          <h2 className="text-xl md:text-3xl font-semibold font-inter-tight text-white mb-4">
+                          <h2 className="text-base md:text-3xl font-semibold font-inter-tight text-white mb-4">
                             {item.subtitle}
                           </h2>
-                          <p className="text-base text-white/80 leading-relaxed max-w-3xl">
+                          <p className="text-sm text-shadow-lg md:text-base text-white/80 leading-relaxed max-w-3xl">
                             {item.description}
                           </p>
                         </div>
                       </div>
-                      <button className="group inline-flex ml-auto items-center bg-primary-foreground text-foreground px-8 py-4 rounded-4xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl max-w-[200px] cursor-pointer">
+                      <button className="group inline-flex ml-auto items-center bg-primary-foreground text-foreground px-8 py-4 rounded-4xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl w-full text-center justify-center md:max-w-[200px] cursor-pointer">
                         {item.buttonText}
                       </button>
                     </div>
